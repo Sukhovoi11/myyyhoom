@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="/">Главная</a></li>
+      <li><a href="/crypto">Криптовалюты</a></li>
+      <li><a href="/exchange-rate">Курсы валют</a></li>
+      <% if (user) { %>
+        <li><a href="/top-up">Пополнить баланс</a></li>
+        <li>Баланс: <%= user.balance %> PLN</li> <!-- Отображаем баланс пользователя -->
+        <li><a href="/logout">Выйти</a></li>
+      <% } else { %>
+        <li><a href="/login">Войти</a></li>
+        <li><a href="/signup">Зарегистрироваться</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
